@@ -16,7 +16,7 @@ public class PokemonManager {
         return this;
     }
 
-    public Pokemon getRandom() {
+    public static Pokemon getRandom() {
         int index = (int) (Math.random() * POKEDEX.size());
 
         return POKEDEX.get(index);
