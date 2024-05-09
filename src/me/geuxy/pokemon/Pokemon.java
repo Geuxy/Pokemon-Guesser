@@ -1,11 +1,11 @@
 package me.geuxy.pokemon;
 
-import javax.swing.*;
+import javafx.scene.image.Image;
 
 public class Pokemon {
 
     private final String name, number;
-    private Icon icon;
+    private Image icon;
 
     public Pokemon(final String name, final String number) {
         this.name = name;
@@ -16,11 +16,11 @@ public class Pokemon {
         return name;
     }
 
-    public Icon getIcon() {
+    public Image getIcon() {
         return icon;
     }
 
-    public void setIcon(Icon icon) {
+    public void setImage(Image icon) {
         this.icon = icon;
     }
 
