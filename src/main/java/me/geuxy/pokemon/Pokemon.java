@@ -6,9 +6,12 @@ import com.google.gson.JsonObject;
 
 import javafx.scene.image.Image;
 
+import lombok.Getter;
+
 import java.util.LinkedList;
 import java.util.List;
 
+@Getter
 public class Pokemon {
 
     /*
@@ -47,31 +50,10 @@ public class Pokemon {
     }
 
     /*
-     * Get pokemons name.
-     */
-    public String getName() {
-        return name;
-    }
-
-    /*
-     * Gets the sprite image of the pokemon.
-     */
-    public Image getSprite() {
-        return sprite;
-    }
-
-    /*
      * Sets the pokemons sprite / image.
      */
     public void setSprite() {
         this.sprite = new Image(imageUrl, 256, 256, true, false);
-    }
-
-    /*
-     * Pokemon number
-     */
-    public int getNumber() {
-        return number;
     }
 
     /**

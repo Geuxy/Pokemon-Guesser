@@ -4,6 +4,6 @@ public enum GuessMode {
 
     NAME,
     NUMBER,
-    ELEMENT
+    TYPE
 
 }

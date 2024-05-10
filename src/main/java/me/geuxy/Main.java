@@ -1,6 +1,7 @@
 package me.geuxy;
 
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import me.geuxy.pokemon.PokemonManager;
@@ -8,6 +9,8 @@ import me.geuxy.scenes.GameScene;
 import me.geuxy.scenes.HomeScene;
 
 public class Main extends Application {
+
+    private final Image ballImage = new Image("ball.gif", 256, 256, true, false);
 
     /*
      * Scenes
@@ -27,6 +30,8 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) {
+
+        // Get all pokemon
         new PokemonManager();
 
         // Initialize Home Screen and set button click event
@@ -40,9 +45,10 @@ public class Main extends Application {
             // Change scene to game
             stage.setScene(gameScene);
         });
-
         // Set default scene to Home Scene
         stage.setScene(homeScene);
+        stage.setTitle("Pokemon Guesser");
+        stage.getIcons().add(ballImage);
         stage.show();
     }
 

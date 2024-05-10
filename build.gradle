@@ -1,18 +1,28 @@
-plugins {
-    id 'java'
-}
+plugins { id 'java' }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+def main = 'me.geuxy.Main'
 
-repositories {
-    mavenCentral()
-}
+def gsonVersion = '2.10.1'
+def lombokVersion = '1.18.32'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+repositories { mavenCentral() }
 
 dependencies {
-    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation group: 'com.google.code.gson', name: 'gson', version: gsonVersion
+
+    compileOnly group: 'org.projectlombok', name: "lombok", version: lombokVersion
+    annotationProcessor group: 'org.projectlombok', name: "lombok", version: lombokVersion
+    testCompileOnly group: 'org.projectlombok', name: "lombok", version: lombokVersion
+    testAnnotationProcessor group: 'org.projectlombok', name: "lombok", version: lombokVersion
 }
 
-test {
-    useJUnitPlatform()
+jar {
+    manifest {
+        attributes['Manifest-Version'] = '1.0'
+        attributes['Main-Class'] = main
+        attributes['Created-By'] = 'Geuxy'
+    }
 }

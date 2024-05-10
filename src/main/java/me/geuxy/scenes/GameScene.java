@@ -93,7 +93,7 @@ public class GameScene extends Scene {
         return switch(mode) {
             case NAME -> this.pokemon.getName().toLowerCase().equals(answer);
             case NUMBER -> this.pokemon.getNumber() == IntegerUtil.toInt(answer);
-            case ELEMENT -> this.pokemon.isType(answer.toLowerCase());
+            case TYPE -> this.pokemon.isType(answer.toLowerCase());
         };
     }
 
